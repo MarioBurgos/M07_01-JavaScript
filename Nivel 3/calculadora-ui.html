@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalculadoraJS</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body class="bg-warning">
+
+    <div class="container p-5 w-25">
+        <div class="row title mb-5">
+            <div class="col text-center">
+                <h1>Calculadora</h1>
+                <small></small>
+            </div>
+        </div>
+        <!-- Calc Body -->
+        <div class="row calculadora bg-secondary border border-light rounded m-0 p-0 w-auto shadow-lg">
+            <!-- Display -->
+            <div class="row display h-100 m-0 p-2">
+                <div class="col text-end w-100 border border-dark rounded bg-light">
+                    <h2 class="text-dark">0</h2>
+                </div>
+            </div>
+            <!-- BUTTONS -->
+            <div class="row buttons text-center m-0 p-2">
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="7" onclick="displayValue(this.val())">7</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="8" onclick="displayValue(this)">8</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="9" onclick="displayValue(this)">9</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="+" onclick="getBtnValue()">+</button>
+                    </div>
+                </div>
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="4" onclick="getBtnValue()">4</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="5" onclick="getBtnValue()">5</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="6" onclick="getBtnValue()">6</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="*" onclick="getBtnValue()">X</button>
+                    </div>
+                </div>
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="1" onclick="getBtnValue()">1</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="2" onclick="getBtnValue()">2</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="3" onclick="getBtnValue()">3</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="-" onclick="getBtnValue()">- </button>
+                    </div>
+                </div>
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="0" onclick="getBtnValue()">0</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="." onclick="getBtnValue()">.</button>
+                        <button class="btn btn-outline-light bg-success text-white btn-operator w-100 m-1" value="=">=</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="/" onclick="getBtnValue()">&#247;</button>
+                    </div>
+                </div>
+            </div>
+            <!-- JS code -->
+            <script src="./calculadora.js"></script>
+</body>
+
+</html>

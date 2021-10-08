@@ -24,9 +24,6 @@
                     break;
                 case 'division':
                     res = valor1 / valor2;
-                    if (valor2 === 0) {
-                        res = 'Error! No se puede dividir entre 0';
-                    }
                     break;
                 default:
                     break;
@@ -34,7 +31,7 @@
             return res;
         }
 
-        console.log(calcula('division', 2, 0));
+        console.log(calcula('multiplicacion', 2, 2));
     </script>
 </body>
 
