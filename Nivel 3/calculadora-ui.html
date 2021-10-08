@@ -24,49 +24,50 @@
             <!-- Display -->
             <div class="row display h-100 m-0 p-2">
                 <div class="col text-end w-100 border border-dark rounded bg-light">
-                    <h2 class="text-dark">0</h2>
+                    <small class="text-dark" id="small-display">&nbsp;</small>
+                    <h2 class="text-dark line-height-sm" id="big-display">0</h2>
                 </div>
             </div>
             <!-- BUTTONS -->
             <div class="row buttons text-center m-0 p-2">
                 <div class="row btn-number m-0 p-0">
                     <div class="col-10 d-flex justify-content-between m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="7" onclick="displayValue(this.val())">7</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="8" onclick="displayValue(this)">8</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="9" onclick="displayValue(this)">9</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="7" onclick="smallDisplayValue(this.value);">7</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="8" onclick="smallDisplayValue(this.value);">8</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="9" onclick="smallDisplayValue(this.value);">9</button>
                     </div>
                     <div class="col-2 d-flex justify-content-between m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="+" onclick="getBtnValue()">+</button>
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="+" onclick="smallDisplayValue(this.value)">+</button>
                     </div>
                 </div>
                 <div class="row btn-number m-0 p-0">
                     <div class="col-10 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="4" onclick="getBtnValue()">4</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="5" onclick="getBtnValue()">5</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="6" onclick="getBtnValue()">6</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="4" onclick="smallDisplayValue(this.value);">4</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="5" onclick="smallDisplayValue(this.value);">5</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="6" onclick="smallDisplayValue(this.value);">6</button>
                     </div>
                     <div class="col-2 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="*" onclick="getBtnValue()">X</button>
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="*" onclick="smallDisplayValue(this.value);">X</button>
                     </div>
                 </div>
                 <div class="row btn-number m-0 p-0">
                     <div class="col-10 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="1" onclick="getBtnValue()">1</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="2" onclick="getBtnValue()">2</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="3" onclick="getBtnValue()">3</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="1" onclick="smallDisplayValue(this.value);">1</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="2" onclick="smallDisplayValue(this.value);">2</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="3" onclick="smallDisplayValue(this.value);">3</button>
                     </div>
                     <div class="col-2 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="-" onclick="getBtnValue()">- </button>
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="-" onclick="smallDisplayValue(this.value)">- </button>
                     </div>
                 </div>
                 <div class="row btn-number m-0 p-0">
                     <div class="col-10 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="0" onclick="getBtnValue()">0</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="." onclick="getBtnValue()">.</button>
-                        <button class="btn btn-outline-light bg-success text-white btn-operator w-100 m-1" value="=">=</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="0" onclick="smallDisplayValue(this.value);">0</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="." onclick="smallDisplayValue(this.value);">.</button>
+                        <button class="btn btn-outline-light bg-success text-white btn-operator w-100 m-1" value="=" onclick="bigDisplayValue()">=</button>
                     </div>
                     <div class="col-2 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="/" onclick="getBtnValue()">&#247;</button>
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="/" onclick="smallDisplayValue(this.value)">&#247;</button>
                     </div>
                 </div>
             </div>

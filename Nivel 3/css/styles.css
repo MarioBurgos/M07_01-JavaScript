@@ -1,6 +1,25 @@
-/*Custom classes*/
+/* Fonts */
+@font-face {
+  font-family: 'Digital';
+  src: url("../assets/fonts/digital-7.ttf");
+}
+
+/* Custom classes */
 .display {
-  min-height: 4rem;
+  line-height: 2.25;
+}
+
+.display > * {
+  min-height: 5.5rem;
+  font-family: 'Digital';
+}
+
+.small-display {
+  font-size: small;
+}
+
+.big-display {
+  font-size: xx-large;
 }
 
 /*!
