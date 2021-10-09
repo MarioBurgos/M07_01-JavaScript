@@ -1,16 +1,34 @@
-var value;
+var value = '';
 
-/** Recibe el valor del botón que se acaba de pulsar y lo concatena a una variable.
+/** 
+ * Recibe el valor del botón que se acaba de pulsar y lo concatena a una variable.
  * Después lo pinta en el small-display
- * @param value, the value of the button that has just been pressed
+ * @param value, el valor del boton pulsado
  */
-function smallDisplayValue(value) {
+function displayOperation(value) {
+    // siempre se pinta en el small-display
+    // se controla si es el primer numero o si ya habia uno printado 
+    if (document.getElementById("small-display").innerText != document.getElementById("big-display").innerText) {
+        document.getElementById("small-display").innerText += value;
+    } else {
+        document.getElementById("small-display").innerText = value;
 
-    this.value = value;
-    document.getElementById("small-display").innerText += value + ' ';
+    }
+
+    console.log('value is ' + value);
 }
 
-/** Does the math  */
-function bigDisplayValue(value) {
-    document.getElementById("big-display").innerText = eval(value);
+/** Calcula la operación y pinta su resultado en el big-display y small-display  */
+function displayResult() {
+    var operation = document.getElementById("small-display").textContent;
+    result = eval(operation); //  Cuidado con esta función `eval(string)` pues reduce la seguridad de la aplicación.  
+    // TODO calcular el resultado de la operación mediante regex y split.
+    document.getElementById("big-display").innerText = result;
+    document.getElementById("small-display").innerText = result;
+
 }
+
+
+/**
+ * Enseña alertas en la página.
+ */

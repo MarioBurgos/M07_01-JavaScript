@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MarioBurgos/M07_01-JavaScript#readme",
   "dependencies": {
-    "bootstrap": "^5.1.2"
+    "bootstrap": "^5.1.2",
+    "mathjs": "^9.5.0"
   }
 }

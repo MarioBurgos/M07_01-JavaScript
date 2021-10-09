@@ -7,72 +7,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalculadoraJS</title>
     <link rel="stylesheet" href="css/styles.css">
-
 </head>
 
-<body class="bg-warning">
-
-    <div class="container p-5 w-25">
-        <div class="row title mb-5">
-            <div class="col text-center">
+<body>
+    <div class="custom-container-fluid w-100 bg-light bg-gradient">
+        <div class="row mb-5">
+            <div class="title text-center">
                 <h1>Calculadora</h1>
                 <small></small>
             </div>
         </div>
+
+
         <!-- Calc Body -->
-        <div class="row calculadora bg-secondary border border-light rounded m-0 p-0 w-auto shadow-lg">
+        <div class="calculadora p-3 m-auto shadow-lg">
             <!-- Display -->
-            <div class="row display h-100 m-0 p-2">
-                <div class="col text-end w-100 border border-dark rounded bg-light">
-                    <small class="text-dark" id="small-display">&nbsp;</small>
-                    <h2 class="text-dark line-height-sm" id="big-display">0</h2>
-                </div>
+            <div class="display row w-100 m-auto mb-4 p-1 bg-light text-end rounded">
+                <small class="small-display" id="small-display">&nbsp;</small>
+                <h2 class="big-display" id="big-display">0</h2>
             </div>
             <!-- BUTTONS -->
-            <div class="row buttons text-center m-0 p-2">
-                <div class="row btn-number m-0 p-0">
-                    <div class="col-10 d-flex justify-content-between m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="7" onclick="smallDisplayValue(this.value);">7</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="8" onclick="smallDisplayValue(this.value);">8</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="9" onclick="smallDisplayValue(this.value);">9</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-between m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="+" onclick="smallDisplayValue(this.value)">+</button>
-                    </div>
+            <div class="button-panel">
+                <div class="col buttons m-auto my-2">
+                    <button class="button-number" value="7" onclick="displayOperation(this.value);">7</button>
+                    <button class="button-number" value="8" onclick="displayOperation(this.value);">8</button>
+                    <button class="button-number" value="9" onclick="displayOperation(this.value);">9</button>
+                    <button class="button-operator" value="+" onclick="displayOperation(this.value)">+</button>
                 </div>
-                <div class="row btn-number m-0 p-0">
-                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="4" onclick="smallDisplayValue(this.value);">4</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="5" onclick="smallDisplayValue(this.value);">5</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="6" onclick="smallDisplayValue(this.value);">6</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="*" onclick="smallDisplayValue(this.value);">X</button>
-                    </div>
+                <div class="col buttons m-auto my-2">
+                    <button class="button-number" value="4" onclick="displayOperation(this.value);">4</button>
+                    <button class="button-number" value="5" onclick="displayOperation(this.value);">5</button>
+                    <button class="button-number" value="6" onclick="displayOperation(this.value);">6</button>
+                    <button class="button-operator" value="-" onclick="displayOperation(this.value)">-</button>
                 </div>
-                <div class="row btn-number m-0 p-0">
-                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="1" onclick="smallDisplayValue(this.value);">1</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="2" onclick="smallDisplayValue(this.value);">2</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="3" onclick="smallDisplayValue(this.value);">3</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="-" onclick="smallDisplayValue(this.value)">- </button>
-                    </div>
+                <div class="col buttons m-auto my-2">
+                    <button class="button-number" value="1" onclick="displayOperation(this.value);">1</button>
+                    <button class="button-number" value="2" onclick="displayOperation(this.value);">2</button>
+                    <button class="button-number" value="3" onclick="displayOperation(this.value);">3</button>
+                    <button class="button-operator" value="x" onclick="displayOperation(this.value)">x</button>
                 </div>
-                <div class="row btn-number m-0 p-0">
-                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="0" onclick="smallDisplayValue(this.value);">0</button>
-                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="." onclick="smallDisplayValue(this.value);">.</button>
-                        <button class="btn btn-outline-light bg-success text-white btn-operator w-100 m-1" value="=" onclick="bigDisplayValue()">=</button>
-                    </div>
-                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
-                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="/" onclick="smallDisplayValue(this.value)">&#247;</button>
-                    </div>
+                <div class="col buttons m-auto my-2">
+                    <button class="button-number" value="." onclick="displayOperation(this.value);">.</button>
+                    <button class="button-number" value="0" onclick="displayOperation(this.value);">0</button>
+                    <button class="button-number" value="=" onclick="displayResult();">=</button>
+                    <button class="button-operator" value="/" onclick="displayOperation(this.value)">&#247;</button>
                 </div>
             </div>
-            <!-- JS code -->
-            <script src="./calculadora.js"></script>
+
+            <!-- <div class="row buttons w-25 p-4 mb-0 pb-0">
+                <div class="row btn-number w-25 h-25 mt-5 ">
+                    <div class="col d-flex flex-row"></div>
+                </div>
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="4" onclick="displayOperation(this.value);">4</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="5" onclick="displayOperation(this.value);">5</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="6" onclick="displayOperation(this.value);">6</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="*" onclick="displayOperation(this.value);">x</button>
+                    </div>
+                </div>
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="1" onclick="displayOperation(this.value);">1</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="2" onclick="displayOperation(this.value);">2</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="3" onclick="displayOperation(this.value);">3</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="-" onclick="displayOperation(this.value)">- </button>
+                    </div>
+                </div>
+                <div class="row btn-number m-0 p-0">
+                    <div class="col-10 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="0" onclick="displayOperation(this.value);">0</button>
+                        <button class="btn btn-outline-light bg-dark text-white btn-operator w-100 m-1" value="." onclick="displayOperation(this.value);">.</button>
+                        <button class="btn btn-outline-light bg-success text-white btn-operator w-100 m-1" value="=" onclick="displayResult()">=</button>
+                    </div>
+                    <div class="col-2 d-flex justify-content-between  m-0 p-0">
+                        <button class="btn btn-outline-light bg-danger text-white btn-operator w-100 m-1" value="/" onclick="displayOperation(this.value)">&#247;</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+
+    </div>
+    <!-- JS code -->
+    <script src="./calculadora.js"></script>
 </body>
 
 </html>
