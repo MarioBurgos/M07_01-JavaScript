@@ -1,4 +1,5 @@
 var value = '';
+var operation = [];
 
 /** 
  * Recibe el valor del botón que se acaba de pulsar y lo concatena a una variable.
@@ -10,6 +11,7 @@ function displayOperation(value) {
     // se controla si es el primer numero o si ya habia uno printado 
     if (document.getElementById("small-display").innerText != document.getElementById("big-display").innerText) {
         document.getElementById("small-display").innerText += value;
+        operation.push(value);
     } else {
         document.getElementById("small-display").innerText = value;
 
