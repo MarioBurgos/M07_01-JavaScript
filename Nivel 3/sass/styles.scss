@@ -16,9 +16,9 @@ $font-display: "../assets/fonts/digital-7.ttf";
 
 .calculadora {
     width: 300px;
-    height: 350px;
+    height: 400px;
     border-radius: 15px;
-    background: linear-gradient( to bottom, #ddd, #bbb, #999);
+    background: linear-gradient( to bottom, #555, #333, #111);
     &:after {
         animation-delay: 1s;
     }

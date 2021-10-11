@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body onload="init();">
     <div class="custom-container-fluid w-100 bg-light bg-gradient">
         <div class="row my-5">
             <div class="title text-center">
@@ -28,6 +28,10 @@
             </div>
             <!-- BUTTONS -->
             <div class="button-panel">
+                <div class="col buttons d-flex flex-row justify-content-end my-2">
+                    <button class="button-options me-3 " onclick="deleteInput();">C</button>
+                    <button class="button-options me-2" onclick="resetOperation();">AC</button>
+                </div>
                 <div class="col buttons m-auto my-2">
                     <button class="button-number" value="7" onclick="displayOperation(this.value);">7</button>
                     <button class="button-number" value="8" onclick="displayOperation(this.value);">8</button>
@@ -49,7 +53,7 @@
                 <div class="col buttons m-auto my-2">
                     <button class="button-number" value="." onclick="displayOperation(this.value);">.</button>
                     <button class="button-number" value="0" onclick="displayOperation(this.value);">0</button>
-                    <button class="button-equals" value="=" onclick="displayResult();">=</button>
+                    <button class="button-equals" onclick="displayResult();">=</button>
                     <button class="button-operator" value="/" onclick="displayOperation(this.value)">&#247;</button>
                 </div>
             </div>
